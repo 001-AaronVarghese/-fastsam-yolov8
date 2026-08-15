@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DriveGuard - Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">🚗 DRIVEGUARD</div>
+      <div>
+        <button class="btn-primary" onclick="window.location.href = '/drive'">
+          🟢 START DRIVING
+        </button>
+        <button
+          class="btn-primary"
+          style="
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            margin-left: 10px;
+          "
+          onclick="window.location.href = '/'"
+        >
+          LOGOUT
+        </button>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="dashboard-grid">
+        <div class="card">
+          <div class="card-title">⭐ DRIVING SAFETY RATING</div>
+          <div class="score">85</div>
+          <p>Status: EXCELLENT</p>
+          <p>Trips Completed: 24</p>
+          <p>Hazards Avoided: 12</p>
+        </div>
+        <div class="card">
+          <div class="card-title">📍 RECENT HAZARDS</div>
+          <p>🚗 Vehicle Collision - 2.3km away</p>
+          <p>⚠️ Road Hazard - 5.1km away</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🗺️ OBSTACLE DETECTION MAP</div>
+        <div id="hazard-map"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+  </body>
+</html>

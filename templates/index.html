@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveGuard - HUD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <header class="hud-header">
+        <div class="status-group">
+            <div class="logo" onclick="window.location.href='/home'">DRIVEGUARD</div>
+        </div>
+        <div class="controls-group">
+            <button class="hud-btn" onclick="document.getElementById('videoInput').click()">UPLOAD VIDEO</button>
+            <input type="file" id="videoInput" accept="video/*" style="display:none" onchange="uploadVideo(this)">
+            <button class="hud-btn" onclick="resetSource()">LIVE CAM</button>
+            <button class="hud-btn" onclick="window.location.href='/'">OFF</button>
+        </div>
+    </header>
+
+    <main class="cockpit-grid">
+        <div class="center-view">
+            <div class="video-frame">
+                <img id="videoFeed" src="/video_feed" alt="Awaiting Video Feed...">
+            </div>
+        </div>
+
+        <div class="alert-panel" id="alertPanel">
+            <div class="metric-box">
+                <h2>THREAT LEVEL</h2>
+                <div class="massive-indicator" id="risk-indicator">SAFE</div>
+            </div>
+            
+            <div class="metric-box enhancement-box">
+                <h3>LOW-LIGHT VISION</h3>
+                <div id="enhanceStatus" class="status-text">STANDBY</div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

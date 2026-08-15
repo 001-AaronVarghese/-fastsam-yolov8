@@ -1,0 +1,142 @@
+:root { 
+    --bg-color: #050505; 
+    --hud-color: #00f2ff; 
+    --safe-color: #00ff41; 
+    --caution-color: #ffc400; 
+    --critical-color: #ff003c; 
+    --text-primary: #e0e0e0; 
+}
+
+body { 
+    background-color: var(--bg-color); 
+    color: var(--text-primary); 
+    font-family: 'Rajdhani', sans-serif; 
+    height: 100vh; 
+    margin: 0; 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.hud-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1rem 2rem; 
+    background: #080808; 
+    border-bottom: 2px solid #222; 
+}
+
+.controls-group, .status-group { display: flex; gap: 1.5rem; align-items: center; }
+
+.logo { 
+    font-family: 'Orbitron'; 
+    font-weight: 900; 
+    color: var(--hud-color); 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+    letter-spacing: 2px;
+}
+
+.hud-btn { 
+    background: transparent; 
+    border: 1px solid var(--hud-color); 
+    color: var(--hud-color); 
+    padding: 10px 20px; 
+    font-family: 'Orbitron'; 
+    cursor: pointer; 
+    font-size: 0.9rem; 
+    font-weight: bold; 
+    border-radius: 4px; 
+    transition: all 0.2s ease;
+}
+
+.hud-btn:hover { background: var(--hud-color); color: black; }
+
+.cockpit-grid { 
+    flex: 1; 
+    display: grid; 
+    grid-template-columns: 1fr 350px;
+    gap: 15px; 
+    padding: 15px; 
+}
+
+.center-view { 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%;
+}
+
+.video-frame { 
+    flex: 1; 
+    border: 2px solid #222; 
+    background: black; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
+    border-radius: 8px;
+}
+
+.video-frame img { width: 100%; height: 100%; object-fit: contain; }
+
+.alert-panel { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    background: rgba(10, 10, 10, 0.8); 
+    border: 2px solid #222; 
+    border-radius: 8px;
+    gap: 60px; 
+    transition: all 0.3s ease;
+}
+
+.metric-box { text-align: center; width: 100%; }
+
+.metric-box h2 { 
+    color: #888; 
+    font-size: 1.2rem; 
+    font-family: 'Orbitron'; 
+    margin-bottom: 15px; 
+    letter-spacing: 2px;
+}
+
+.massive-indicator { 
+    font-size: 3.5rem;
+    font-family: 'Orbitron'; 
+    font-weight: 900; 
+    color: var(--safe-color); 
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+    letter-spacing: 3px;
+}
+
+.enhancement-box h3 {
+    color: #666; 
+    font-size: 1rem; 
+    font-family: 'Orbitron'; 
+    margin-bottom: 5px; 
+}
+
+.status-text {
+    font-family: 'Orbitron'; 
+    font-size: 1.5rem; 
+    color: #444; 
+    font-weight: bold;
+}
+
+.panel-caution { 
+    border-color: var(--caution-color); 
+    box-shadow: inset 0 0 50px rgba(255, 196, 0, 0.1); 
+}
+
+.panel-critical { 
+    border-color: var(--critical-color); 
+    box-shadow: inset 0 0 80px rgba(255, 0, 60, 0.2); 
+    animation: critical-flash 0.5s infinite alternate; 
+}
+
+@keyframes critical-flash { 
+    from { background: rgba(20, 0, 0, 0.9); } 
+    to { background: rgba(60, 0, 0, 0.9); } 
+}

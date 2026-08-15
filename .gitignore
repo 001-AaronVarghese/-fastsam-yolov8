@@ -1,0 +1,15 @@
+.venv/
+pycache/
+build/
+dist/
+datasets/
+runs/
+output_vid/
+uploads/
+test_videos/
+screenshot/
+
+*.pt
+*.pth
+*.onnx
+*.mp4

@@ -1,0 +1,30 @@
+CONFIG = {
+    "device": "cuda",
+    "yolo_model": "runs/detect/train8/weights/best.pt",
+    "fastsam_model": "FastSAM-s.pt",
+    "imgsz": 640,
+    "yolo_conf": 0.25,
+    "yolo_iou": 0.45,
+    "fastsam_conf": 0.40,
+    "fastsam_iou": 0.90,
+    "fusion_iou_thresh": 0.5,
+    "fusion_yolo_weight": 0.6,
+    "fusion_fastsam_weight": 0.4,
+    "show_masks": True,
+    "draw_scores": True,
+    "verbose": True,
+}
+
+CLASS_COLORS = {
+    "person": (0, 255, 0),
+    "car": (255, 0, 0),
+    "bus": (0, 165, 255),
+    "truck": (0, 0, 255),
+    "bicycle": (255, 255, 0),
+    "motorcycle": (255, 0, 255),
+    "auto_rickshaw": (255, 165, 0),
+    "animal": (128, 0, 128),
+    "pothole": (0, 128, 255),
+    "traffic_cone": (0, 255, 255),
+    "object": (200, 200, 200),
+}
