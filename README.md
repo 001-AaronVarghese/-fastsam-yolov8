@@ -139,6 +139,6 @@ python main_phase1.py --camera 2
 - FastSAM: https://docs.ultralytics.com/models/fast-sam/
 - Ultralytics Docs: https://docs.ultralytics.com/
 
----
+----------------------
 
-**Phase 1 Complete!** Ready for Phase 2 enhancement integration. 🚀
+**Phase 1 Complete!** Ready for Phase 2 enhancement integration.🚀
